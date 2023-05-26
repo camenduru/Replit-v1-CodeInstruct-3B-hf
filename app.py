@@ -4,7 +4,7 @@ import torch
 
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-REPO = "teknium/Replit-v1-CodeInstruct-3B-fp16"
+REPO = "teknium/Replit-v1-CodeInstruct-3B"
 
 description = """# <h1 style="text-align: center; color: white;"><span style='color: #F26207;'> Code Completion with Replit-v1-CodeInstruct-3B-fp16 </h1>
 <span style="color: white; text-align: center;"> This model is trained on a large amount of code and can help provide code completions. You can click the button several times to keep completing your code.</span>"""
@@ -12,7 +12,7 @@ description = """# <h1 style="text-align: center; color: white;"><span style='co
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 tokenizer = AutoTokenizer.from_pretrained(REPO, trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained(REPO, torch_dtype=torch.float16, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(REPO, trust_remote_code=True)
 model.to(device)
 
 model.eval()
