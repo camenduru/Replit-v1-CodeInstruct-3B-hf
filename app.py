@@ -9,7 +9,6 @@ REPO = "teknium/Replit-v1-CodeInstruct-3B-fp16"
 description = """# <h1 style="text-align: center; color: white;"><span style='color: #F26207;'> Code Completion with Replit-v1-CodeInstruct-3B-fp16 </h1>
 <span style="color: white; text-align: center;"> This model is trained on a large amount of code and can help provide code completions. You can click the button several times to keep completing your code.</span>"""
 
-token = os.environ["HUB_TOKEN"]
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 tokenizer = AutoTokenizer.from_pretrained(REPO, use_auth_token=token, trust_remote_code=True)
