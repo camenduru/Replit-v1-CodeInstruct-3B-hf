@@ -11,7 +11,7 @@ description = """# <h1 style="text-align: center; color: white;"><span style='co
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-tokenizer = AutoTokenizer.from_pretrained(REPO, use_auth_token=token, trust_remote_code=True)
+tokenizer = AutoTokenizer.from_pretrained(REPO, trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(REPO, torch_dtype=torch.float16, trust_remote_code=True)
 model.to(device)
 
