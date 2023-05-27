@@ -68,7 +68,7 @@ with demo:
                 )
 
     with gr.Row():
-        run = gr.Button(elem_id="orange-button", value="Generate More Code")
+        run = gr.Button(elem_id="orange-button", value="Generate Response")
 
     event = run.click(code_generation, [code, max_new_tokens, temperature], code, api_name="predict")
 
