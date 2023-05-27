@@ -49,7 +49,7 @@ with demo:
     with gr.Row():
         input_col , settings_col  = gr.Column(scale=6), gr.Column(scale=6), 
         with input_col:
-            code = gr.Code(lines=28,label='Input', value="def sieve_eratosthenes(n):")
+            code = gr.Code(lines=28,label='Input', value="### Instruction:\n\n### Response:")
         with settings_col:
             with gr.Accordion("Generation Settings", open=True):
                 max_new_tokens= gr.Slider(
