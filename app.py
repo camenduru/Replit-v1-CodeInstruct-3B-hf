@@ -8,7 +8,6 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 REPO = "/content/model"
 
 os.system(f"apt -y install -qq aria2")
-
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/config.json -d /content/model -o config.json")
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/generation_config.json -d /content/model -o generation_config.json")
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/special_tokens_map.json -d /content/model -o special_tokens_map.json")
@@ -33,7 +32,7 @@ description = """# <h1 style="text-align: center; color: white;"><span style='co
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 tokenizer = AutoTokenizer.from_pretrained(REPO, trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained(REPO, torch_dtype=torch.bfloat16, trust_remote_code=True, local_files_only=True)
+model = AutoModelForCausalLM.from_pretrained(REPO, torch_dtype=torch.bfloat16, trust_remote_code=True)
 model.to(device)
 
 model.eval()
