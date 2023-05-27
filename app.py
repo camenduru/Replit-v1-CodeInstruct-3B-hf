@@ -4,7 +4,7 @@ import torch
 
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-REPO = "teknium/Replit-v1-CodeInstruct-3B"
+REPO = "teknium/Replit-v1-CodeInstruct-3B-fp16"
 
 description = """# <h1 style="text-align: center; color: white;"><span style='color: #F26207;'> Code Generation by Instruction with Replit-v1-CodeInstruct-3B </h1>
 <span style="color: white; text-align: center;"> This model is trained on a large amount of code and fine tuned on code-instruct datasets. You can type an instruction in the ### Instruction: section and received code generation.</span>"""
