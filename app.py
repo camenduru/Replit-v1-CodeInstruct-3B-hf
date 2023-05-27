@@ -8,13 +8,24 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 REPO = "/content/model"
 
 os.system(f"apt -y install -qq aria2")
+
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/config.json -d /content/model -o config.json")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/generation_config.json -d /content/model -o generation_config.json")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/special_tokens_map.json -d /content/model -o special_tokens_map.json")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/tokenizer.json -d /content/model -o tokenizer.json")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/tokenizer_config.json -d /content/model -o tokenizer_config.json")
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/resolve/main/pytorch_model.bin -d /content/model -o pytorch_model.bin")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/configuration_mpt.py -d /content/model -o configuration_mpt.py")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/modeling_mpt.py -d /content/model -o modeling_mpt.py")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/adapt_tokenizer.py -d /content/model -o adapt_tokenizer.py")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/attention.py -d /content/model -o attention.py")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/norm.py -d /content/model -o norm.py")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/param_init_fns.py -d /content/model -o param_init_fns.py")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/hf_prefixlm_converter.py -d /content/model -o hf_prefixlm_converter.py")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/meta_init_context.py -d /content/model -o meta_init_context.py")
+os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/blocks.py -d /content/model -o blocks.py")
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/resolve/main/spiece.model -d /content/model -o spiece.model")
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/added_tokens.json -d /content/model -o added_tokens.json")
-os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/config.json -d /content/model -o config.json")
-os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/special_tokens_map.json -d /content/model -o special_tokens_map.json")
-os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/tokenizer_config.json -d /content/model -o tokenizer_config.json")
-
 description = """# <h1 style="text-align: center; color: white;"><span style='color: #F26207;'> Code Generation by Instruction with Replit-v1-CodeInstruct-3B </h1>
 <span style="color: white; text-align: center;"> This model is trained on a large amount of code and fine tuned on code-instruct datasets. You can type an instruction in the ### Instruction: section and received code generation.</span>"""
 
