@@ -26,6 +26,7 @@ os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggin
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/blocks.py -d /content/model -o blocks.py")
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/resolve/main/spiece.model -d /content/model -o spiece.model")
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/raw/main/added_tokens.json -d /content/model -o added_tokens.json")
+
 description = """# <h1 style="text-align: center; color: white;"><span style='color: #F26207;'> Code Generation by Instruction with Replit-v1-CodeInstruct-3B </h1>
 <span style="color: white; text-align: center;"> This model is trained on a large amount of code and fine tuned on code-instruct datasets. You can type an instruction in the ### Instruction: section and received code generation.</span>"""
 
