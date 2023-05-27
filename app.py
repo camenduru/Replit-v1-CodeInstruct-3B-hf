@@ -5,7 +5,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # REPO = "teknium/Replit-v1-CodeInstruct-3B-fp16"
-REPO = /content/model
+REPO = "/content/model"
 
 os.system(f"apt -y install -qq aria2")
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B-fp16/resolve/main/pytorch_model.bin -d /content/model -o pytorch_model.bin")
