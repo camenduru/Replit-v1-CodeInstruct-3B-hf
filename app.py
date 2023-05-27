@@ -9,7 +9,7 @@ REPO = "teknium/Replit-v1-CodeInstruct-3B-fp16"
 description = """# <h1 style="text-align: center; color: white;"><span style='color: #F26207;'> Code Generation by Instruction with Replit-v1-CodeInstruct-3B </h1>
 <span style="color: white; text-align: center;"> This model is trained on a large amount of code and fine tuned on code-instruct datasets. You can type an instruction in the ### Instruction: section and received code generation.</span>"""
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
+device = "cuda"
 
 tokenizer = AutoTokenizer.from_pretrained(REPO, trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(REPO, torch_dtype=torch.bfloat16, trust_remote_code=True)
