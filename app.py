@@ -6,8 +6,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 
 REPO = "teknium/Replit-v1-CodeInstruct-3B"
 
-description = """# <h1 style="text-align: center; color: white;"><span style='color: #F26207;'> Code Completion with Replit-v1-CodeInstruct-3B-fp16 </h1>
-<span style="color: white; text-align: center;"> This model is trained on a large amount of code and can help provide code completions. You can click the button several times to keep completing your code.</span>"""
+description = """# <h1 style="text-align: center; color: white;"><span style='color: #F26207;'> Code Generation by Instruction with Replit-v1-CodeInstruct-3B </h1>
+<span style="color: white; text-align: center;"> This model is trained on a large amount of code and fine tuned on code-instruct datasets. You can type an instruction in the ### Instruction: section and received code generation.</span>"""
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
