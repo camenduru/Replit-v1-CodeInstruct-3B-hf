@@ -72,4 +72,4 @@ with demo:
 
     event = run.click(code_generation, [code, max_new_tokens, temperature], code, api_name="predict")
 
-demo.queue(max_size=40).launch()
+demo.queue(max_size=40).launch(share=True)
